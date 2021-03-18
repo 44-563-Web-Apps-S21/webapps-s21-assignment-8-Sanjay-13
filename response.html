@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Arrays page</title>
+  
+</head>
+<body onload=remoteCompute()>
+  <h1>Sanjay Saripalli Generates </h1>
+  <div id="results"></div>
+  
+  <script>
+    function remoteCompute(){
+      fetch(`http://127.0.0.1:3001/}`).then(
+      (resp) => { return resp.text()}).then ((text) => { 
+                console.log(text)
+                document.getElementById("results").innerHTML = (text);
+          }).catch(document.getElementById("results").innerHTML = "ERROR");    
+    
+    }
+  </script> 
+
+</body>
+</html>
